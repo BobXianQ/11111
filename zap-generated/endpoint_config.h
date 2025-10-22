@@ -89,7 +89,7 @@
 
 
 // This is an array of EmberAfAttributeMetadata structures.
-#define GENERATED_ATTRIBUTE_COUNT 227
+#define GENERATED_ATTRIBUTE_COUNT 221
 #define GENERATED_ATTRIBUTES { \
 \
   /* Endpoint: 0, Cluster: Descriptor (server) */ \
@@ -321,14 +321,8 @@
   { ZAP_SIMPLE_DEFAULT(1), 0x00000000, 1, ZAP_TYPE(ENUM8), 0 }, /* Status */  \
   { ZAP_SIMPLE_DEFAULT(1), 0x00000001, 1, ZAP_TYPE(INT8U), 0 }, /* Order */  \
   { ZAP_LONG_DEFAULTS_INDEX(8), 0x00000002, 61, ZAP_TYPE(CHAR_STRING), 0 }, /* Description */  \
-  { ZAP_EMPTY_DEFAULT(), 0x0000000C, 1, ZAP_TYPE(INT8U), ZAP_ATTRIBUTE_MASK(NULLABLE) }, /* BatPercentRemaining */  \
-  { ZAP_EMPTY_DEFAULT(), 0x0000000E, 1, ZAP_TYPE(ENUM8), 0 }, /* BatChargeLevel */  \
-  { ZAP_EMPTY_DEFAULT(), 0x0000000F, 1, ZAP_TYPE(BOOLEAN), 0 }, /* BatReplacementNeeded */  \
-  { ZAP_EMPTY_DEFAULT(), 0x00000010, 1, ZAP_TYPE(ENUM8), 0 }, /* BatReplaceability */  \
-  { ZAP_EMPTY_DEFAULT(), 0x00000013, 61, ZAP_TYPE(CHAR_STRING), 0 }, /* BatReplacementDescription */  \
-  { ZAP_EMPTY_DEFAULT(), 0x00000019, 1, ZAP_TYPE(INT8U), 0 }, /* BatQuantity */  \
   { ZAP_EMPTY_DEFAULT(), 0x0000001F, 0, ZAP_TYPE(ARRAY), ZAP_ATTRIBUTE_MASK(EXTERNAL_STORAGE) }, /* EndpointList */  \
-  { ZAP_SIMPLE_DEFAULT(10), 0x0000FFFC, 4, ZAP_TYPE(BITMAP32), 0 }, /* FeatureMap */  \
+  { ZAP_SIMPLE_DEFAULT(0), 0x0000FFFC, 4, ZAP_TYPE(BITMAP32), 0 }, /* FeatureMap */  \
   { ZAP_SIMPLE_DEFAULT(2), 0x0000FFFD, 2, ZAP_TYPE(INT16U), 0 }, /* ClusterRevision */  \
 \
   /* Endpoint: 1, Cluster: Door Lock (server) */ \
@@ -802,8 +796,8 @@ const EmberAfGenericClusterFunction chipFuncArrayDoorLockServer[] = {\
       /* Endpoint: 1, Cluster: Power Source (server) */ \
       .clusterId = 0x0000002F, \
       .attributes = ZAP_ATTRIBUTE_INDEX(187), \
-      .attributeCount = 12, \
-      .clusterSize = 135, \
+      .attributeCount = 6, \
+      .clusterSize = 69, \
       .mask = ZAP_CLUSTER_MASK(SERVER), \
       .functions = NULL, \
       .acceptedCommandList = nullptr, \
@@ -814,7 +808,7 @@ const EmberAfGenericClusterFunction chipFuncArrayDoorLockServer[] = {\
   { \
       /* Endpoint: 1, Cluster: Door Lock (server) */ \
       .clusterId = 0x00000101, \
-      .attributes = ZAP_ATTRIBUTE_INDEX(199), \
+      .attributes = ZAP_ATTRIBUTE_INDEX(193), \
       .attributeCount = 28, \
       .clusterSize = 42, \
       .mask = ZAP_CLUSTER_MASK(SERVER) | ZAP_CLUSTER_MASK(ATTRIBUTE_CHANGED_FUNCTION) | ZAP_CLUSTER_MASK(SHUTDOWN_FUNCTION) | ZAP_CLUSTER_MASK(PRE_ATTRIBUTE_CHANGED_FUNCTION), \
@@ -833,7 +827,7 @@ const EmberAfGenericClusterFunction chipFuncArrayDoorLockServer[] = {\
 // This is an array of EmberAfEndpointType structures.
 #define GENERATED_ENDPOINT_TYPES { \
   { ZAP_CLUSTER_INDEX(0), 18, 201 }, \
-  { ZAP_CLUSTER_INDEX(18), 4, 186 }, \
+  { ZAP_CLUSTER_INDEX(18), 4, 120 }, \
 }
 
 
@@ -848,7 +842,7 @@ static_assert(ATTRIBUTE_LARGEST <= CHIP_CONFIG_MAX_ATTRIBUTE_STORE_ELEMENT_SIZE,
 #define ATTRIBUTE_SINGLETONS_SIZE (36)
 
 // Total size of attribute storage
-#define ATTRIBUTE_MAX_SIZE (387)
+#define ATTRIBUTE_MAX_SIZE (321)
 
 // Number of fixed endpoints
 #define FIXED_ENDPOINT_COUNT (2)
