@@ -77,7 +77,7 @@
 
 
 // This is an array of EmberAfAttributeMetadata structures.
-#define GENERATED_ATTRIBUTE_COUNT 225
+#define GENERATED_ATTRIBUTE_COUNT 222
 #define GENERATED_ATTRIBUTES { \
 \
   /* Endpoint: 0, Cluster: Descriptor (server) */ \
@@ -128,7 +128,7 @@
   { ZAP_SIMPLE_DEFAULT(0), 0x00000002, 1, ZAP_TYPE(ENUM8), 0 }, /* UpdateState */  \
   { ZAP_SIMPLE_DEFAULT(0), 0x00000003, 1, ZAP_TYPE(INT8U), ZAP_ATTRIBUTE_MASK(NULLABLE) }, /* UpdateStateProgress */  \
   { ZAP_SIMPLE_DEFAULT(0), 0x0000FFFC, 4, ZAP_TYPE(BITMAP32), 0 }, /* FeatureMap */  \
-  { ZAP_SIMPLE_DEFAULT(1), 0x0000FFFD, 2, ZAP_TYPE(INT16U), 0 }, /* ClusterRevision */  \
+  { ZAP_SIMPLE_DEFAULT(9), 0x0000FFFD, 2, ZAP_TYPE(INT16U), ZAP_ATTRIBUTE_MASK(TOKENIZE) }, /* ClusterRevision */  \
 \
   /* Endpoint: 0, Cluster: Localization Configuration (server) */ \
   { ZAP_EMPTY_DEFAULT(), 0x00000000, 36, ZAP_TYPE(CHAR_STRING), ZAP_ATTRIBUTE_MASK(WRITABLE) }, /* ActiveLocale */  \
@@ -324,14 +324,11 @@
   { ZAP_EMPTY_DEFAULT(), 0x00000003, 1, ZAP_TYPE(ENUM8), ZAP_ATTRIBUTE_MASK(NULLABLE) }, /* DoorState */  \
   { ZAP_SIMPLE_DEFAULT(10), 0x00000011, 2, ZAP_TYPE(INT16U), 0 }, /* NumberOfTotalUsersSupported */  \
   { ZAP_SIMPLE_DEFAULT(10), 0x00000012, 2, ZAP_TYPE(INT16U), 0 }, /* NumberOfPINUsersSupported */  \
-  { ZAP_SIMPLE_DEFAULT(10), 0x00000013, 2, ZAP_TYPE(INT16U), 0 }, /* NumberOfRFIDUsersSupported */  \
   { ZAP_SIMPLE_DEFAULT(10), 0x00000014, 1, ZAP_TYPE(INT8U), 0 }, /* NumberOfWeekDaySchedulesSupportedPerUser */  \
   { ZAP_SIMPLE_DEFAULT(10), 0x00000015, 1, ZAP_TYPE(INT8U), 0 }, /* NumberOfYearDaySchedulesSupportedPerUser */  \
   { ZAP_SIMPLE_DEFAULT(10), 0x00000016, 1, ZAP_TYPE(INT8U), 0 }, /* NumberOfHolidaySchedulesSupported */  \
   { ZAP_SIMPLE_DEFAULT(8), 0x00000017, 1, ZAP_TYPE(INT8U), 0 }, /* MaxPINCodeLength */  \
   { ZAP_SIMPLE_DEFAULT(6), 0x00000018, 1, ZAP_TYPE(INT8U), 0 }, /* MinPINCodeLength */  \
-  { ZAP_SIMPLE_DEFAULT(20), 0x00000019, 1, ZAP_TYPE(INT8U), 0 }, /* MaxRFIDCodeLength */  \
-  { ZAP_SIMPLE_DEFAULT(10), 0x0000001A, 1, ZAP_TYPE(INT8U), 0 }, /* MinRFIDCodeLength */  \
   { ZAP_SIMPLE_DEFAULT(1), 0x0000001B, 1, ZAP_TYPE(BITMAP8), 0 }, /* CredentialRulesSupport */  \
   { ZAP_SIMPLE_DEFAULT(5), 0x0000001C, 1, ZAP_TYPE(INT8U), 0 }, /* NumberOfCredentialsSupportedPerUser */  \
   { ZAP_LONG_DEFAULTS_INDEX(8), 0x00000021, 4, ZAP_TYPE(CHAR_STRING), ZAP_ATTRIBUTE_MASK(WRITABLE) }, /* Language */  \
@@ -344,7 +341,7 @@
   { ZAP_MIN_MAX_DEFAULTS_INDEX(2), 0x00000030, 1, ZAP_TYPE(INT8U), ZAP_ATTRIBUTE_MASK(MIN_MAX) | ZAP_ATTRIBUTE_MASK(WRITABLE) }, /* WrongCodeEntryLimit */  \
   { ZAP_MIN_MAX_DEFAULTS_INDEX(3), 0x00000031, 1, ZAP_TYPE(INT8U), ZAP_ATTRIBUTE_MASK(MIN_MAX) | ZAP_ATTRIBUTE_MASK(WRITABLE) }, /* UserCodeTemporaryDisableTime */  \
   { ZAP_SIMPLE_DEFAULT(0), 0x00000033, 1, ZAP_TYPE(BOOLEAN), ZAP_ATTRIBUTE_MASK(WRITABLE) }, /* RequirePINforRemoteOperation */  \
-  { ZAP_SIMPLE_DEFAULT(7607), 0x0000FFFC, 4, ZAP_TYPE(BITMAP32), 0 }, /* FeatureMap */  \
+  { ZAP_SIMPLE_DEFAULT(7605), 0x0000FFFC, 4, ZAP_TYPE(BITMAP32), 0 }, /* FeatureMap */  \
   { ZAP_SIMPLE_DEFAULT(7), 0x0000FFFD, 2, ZAP_TYPE(INT16U), 0 }, /* ClusterRevision */  \
 }
 
@@ -801,8 +798,8 @@ const EmberAfGenericClusterFunction chipFuncArrayDoorLockServer[] = {\
       /* Endpoint: 1, Cluster: Door Lock (server) */ \
       .clusterId = 0x00000101, \
       .attributes = ZAP_ATTRIBUTE_INDEX(197), \
-      .attributeCount = 28, \
-      .clusterSize = 42, \
+      .attributeCount = 25, \
+      .clusterSize = 38, \
       .mask = ZAP_CLUSTER_MASK(SERVER) | ZAP_CLUSTER_MASK(ATTRIBUTE_CHANGED_FUNCTION) | ZAP_CLUSTER_MASK(SHUTDOWN_FUNCTION) | ZAP_CLUSTER_MASK(PRE_ATTRIBUTE_CHANGED_FUNCTION), \
       .functions = chipFuncArrayDoorLockServer, \
       .acceptedCommandList = ZAP_GENERATED_COMMANDS_INDEX( 58 ), \
@@ -819,7 +816,7 @@ const EmberAfGenericClusterFunction chipFuncArrayDoorLockServer[] = {\
 // This is an array of EmberAfEndpointType structures.
 #define GENERATED_ENDPOINT_TYPES { \
   { ZAP_CLUSTER_INDEX(0), 19, 274 }, \
-  { ZAP_CLUSTER_INDEX(19), 3, 51 }, \
+  { ZAP_CLUSTER_INDEX(19), 3, 47 }, \
 }
 
 
@@ -834,7 +831,7 @@ static_assert(ATTRIBUTE_LARGEST <= CHIP_CONFIG_MAX_ATTRIBUTE_STORE_ELEMENT_SIZE,
 #define ATTRIBUTE_SINGLETONS_SIZE (36)
 
 // Total size of attribute storage
-#define ATTRIBUTE_MAX_SIZE (325)
+#define ATTRIBUTE_MAX_SIZE (321)
 
 // Number of fixed endpoints
 #define FIXED_ENDPOINT_COUNT (2)
