@@ -691,19 +691,6 @@ const EmberAfGenericClusterFunction chipFuncArrayDoorLockServer[] = {\
       .eventCount = 0, \
     },\
   { \
-      /* Endpoint: 0, Cluster: Time Synchronization (client) */ \
-      .clusterId = 0x00000038, \
-      .attributes = ZAP_ATTRIBUTE_INDEX(157), \
-      .attributeCount = 0, \
-      .clusterSize = 0, \
-      .mask = ZAP_CLUSTER_MASK(CLIENT), \
-      .functions = NULL, \
-      .acceptedCommandList = nullptr, \
-      .generatedCommandList = nullptr, \
-      .eventList = nullptr, \
-      .eventCount = 0, \
-    },\
-  { \
       /* Endpoint: 0, Cluster: Administrator Commissioning (server) */ \
       .clusterId = 0x0000003C, \
       .attributes = ZAP_ATTRIBUTE_INDEX(157), \
@@ -808,6 +795,19 @@ const EmberAfGenericClusterFunction chipFuncArrayDoorLockServer[] = {\
       .eventCount = 0, \
     },\
   { \
+      /* Endpoint: 1, Cluster: Time Synchronization (client) */ \
+      .clusterId = 0x00000038, \
+      .attributes = ZAP_ATTRIBUTE_INDEX(197), \
+      .attributeCount = 0, \
+      .clusterSize = 0, \
+      .mask = ZAP_CLUSTER_MASK(CLIENT), \
+      .functions = NULL, \
+      .acceptedCommandList = nullptr, \
+      .generatedCommandList = nullptr, \
+      .eventList = nullptr, \
+      .eventCount = 0, \
+    },\
+  { \
       /* Endpoint: 1, Cluster: Door Lock (server) */ \
       .clusterId = 0x00000101, \
       .attributes = ZAP_ATTRIBUTE_INDEX(197), \
@@ -828,8 +828,8 @@ const EmberAfGenericClusterFunction chipFuncArrayDoorLockServer[] = {\
 
 // This is an array of EmberAfEndpointType structures.
 #define GENERATED_ENDPOINT_TYPES { \
-  { ZAP_CLUSTER_INDEX(0), 20, 274 }, \
-  { ZAP_CLUSTER_INDEX(20), 3, 47 }, \
+  { ZAP_CLUSTER_INDEX(0), 19, 274 }, \
+  { ZAP_CLUSTER_INDEX(19), 4, 47 }, \
 }
 
 
