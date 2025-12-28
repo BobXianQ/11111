@@ -67,6 +67,9 @@ void emberAfClusterInitCallback(EndpointId endpoint, ClusterId clusterId)
      case  app::Clusters::ThreadNetworkDiagnostics::Id:
         emberAfThreadNetworkDiagnosticsClusterInitCallback(endpoint);
         break;
+     case  app::Clusters::TimeSynchronization::Id:
+        emberAfTimeSynchronizationClusterInitCallback(endpoint);
+        break;
      case  app::Clusters::UnitLocalization::Id:
         emberAfUnitLocalizationClusterInitCallback(endpoint);
         break;
