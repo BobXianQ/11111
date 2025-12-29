@@ -518,7 +518,7 @@ const EmberAfGenericClusterFunction chipFuncArrayDoorLockServer[] = {\
 // clang-format on
 
 // This is an array of EmberAfCluster structures.
-#define GENERATED_CLUSTER_COUNT 23
+#define GENERATED_CLUSTER_COUNT 22
 // clang-format off
 #define GENERATED_CLUSTERS { \
   { \
@@ -795,19 +795,6 @@ const EmberAfGenericClusterFunction chipFuncArrayDoorLockServer[] = {\
       .eventCount = 0, \
     },\
   { \
-      /* Endpoint: 1, Cluster: Time Synchronization (client) */ \
-      .clusterId = 0x00000038, \
-      .attributes = ZAP_ATTRIBUTE_INDEX(197), \
-      .attributeCount = 0, \
-      .clusterSize = 0, \
-      .mask = ZAP_CLUSTER_MASK(CLIENT), \
-      .functions = NULL, \
-      .acceptedCommandList = nullptr, \
-      .generatedCommandList = nullptr, \
-      .eventList = nullptr, \
-      .eventCount = 0, \
-    },\
-  { \
       /* Endpoint: 1, Cluster: Door Lock (server) */ \
       .clusterId = 0x00000101, \
       .attributes = ZAP_ATTRIBUTE_INDEX(197), \
@@ -829,7 +816,7 @@ const EmberAfGenericClusterFunction chipFuncArrayDoorLockServer[] = {\
 // This is an array of EmberAfEndpointType structures.
 #define GENERATED_ENDPOINT_TYPES { \
   { ZAP_CLUSTER_INDEX(0), 19, 274 }, \
-  { ZAP_CLUSTER_INDEX(19), 4, 47 }, \
+  { ZAP_CLUSTER_INDEX(19), 3, 47 }, \
 }
 
 

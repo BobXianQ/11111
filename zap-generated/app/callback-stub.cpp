@@ -97,11 +97,6 @@ void __attribute__((weak)) emberAfThreadNetworkDiagnosticsClusterInitCallback(En
     // To prevent warning
     (void) endpoint;
 }
-void __attribute__((weak)) emberAfTimeSynchronizationClusterInitCallback(EndpointId endpoint)
-{
-    // To prevent warning
-    (void) endpoint;
-}
 void __attribute__((weak)) emberAfUnitLocalizationClusterInitCallback(EndpointId endpoint)
 {
     // To prevent warning
